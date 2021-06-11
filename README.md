@@ -1,6 +1,6 @@
 # vue-app
 
-A simple Vue 3 application with a modular approach which consumes a REST API.
+A simple Vue 3 application with a modular approach that consumes a REST API.
 
 ## Project setup
 ```
