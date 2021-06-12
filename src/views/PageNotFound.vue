@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'NotFound',
+  name: 'PageNotFound',
 }
 </script>
 

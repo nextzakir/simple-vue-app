@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import NotFound from '../views/NotFound'
+import PageNotFound from '../views/PageNotFound'
 import EventList from '../views/EventList'
 import About from '../views/About'
 import EventDetails from '../views/EventDetails'
@@ -13,8 +13,8 @@ const routes = [
   },
   {
     path: '/page-not-found',
-    name: 'NotFound',
-    component: NotFound,
+    name: 'PageNotFound',
+    component: PageNotFound,
   },
   {
     path: '/',
