@@ -1,4 +1,4 @@
-# vue-app
+# simple-vue-app
 
 A simple Vue 3 application with a modular approach that consumes a REST API.
 
