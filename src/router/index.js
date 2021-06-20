@@ -1,21 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import PageNotFound from '../views/PageNotFound'
+import NotFound from '../views/NotFound'
 import EventList from '../views/EventList'
 import About from '../views/About'
 import EventDetails from '../views/EventDetails'
 
 const routes = [
-  {
-    path: '/:pathMatch(.*)*',
-    beforeEnter: (to, from, next) => {
-      next('/page-not-found')
-    },
-  },
-  {
-    path: '/page-not-found',
-    name: 'PageNotFound',
-    component: PageNotFound,
-  },
   {
     path: '/',
     name: 'EventList',
@@ -32,6 +21,16 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: { name: 'NotFound', params: { element: 'page' } },
+  },
+  {
+    path: '/:element' + '-not-found',
+    name: 'NotFound',
+    component: NotFound,
+    props: true,
   },
 ]
 

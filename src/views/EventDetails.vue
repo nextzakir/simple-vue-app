@@ -4,6 +4,7 @@
     <h3>@ {{ event.time }} on {{ event.date }}</h3>
     <button @click="goBack">Go Back</button>
   </div>
+  <img v-else class="loader" :src="image" />
 </template>
 
 <script>
@@ -15,6 +16,7 @@ export default {
   data() {
     return {
       event: null,
+      image: 'https://i.gifer.com/ZZ5H.gif',
     }
   },
   created() {
@@ -23,9 +25,8 @@ export default {
         this.event = response.data
       })
       .catch((error) => {
-        console.log(error)
-        if (error.response.status === 404) {
-          this.$router.push('/page-not-found')
+        if (error.response && error.response.status === 404) {
+          this.$router.push({ name: 'NotFound', params: { element: 'event' } })
         }
       })
   },
@@ -45,5 +46,9 @@ button {
   background-color: #42b983;
   border: 1px solid #42b983;
   border-radius: 2px;
+}
+.loader {
+  width: 50px;
+  margin: 50px 0;
 }
 </style>

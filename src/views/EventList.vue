@@ -26,7 +26,6 @@
 import EventCard from '@/components/EventCard.vue'
 import EventService from '@/services/EventService'
 import { watchEffect } from 'vue'
-// import image from "./../assets/loader.gif"
 
 export default {
   name: 'EventList',

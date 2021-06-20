@@ -1,14 +1,28 @@
 <template>
-  <h1>404 - Page Not Found</h1>
+  <h1>404 - {{ titleCase(element) }} Not Found</h1>
   <button @click="goHome">Home</button>
 </template>
 
 <script>
 export default {
-  name: 'PageNotFound',
+  props: {
+    element: {
+      type: String,
+      required: true,
+    },
+  },
   methods: {
     goHome() {
       this.$router.push({ name: 'EventList' })
+    },
+    titleCase(str) {
+      let splitStr = str.toLowerCase().split(' ')
+      for (let i = 0; i < splitStr.length; i++) {
+        splitStr[i] =
+          splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1)
+      }
+
+      return splitStr.join(' ')
     },
   },
 }
