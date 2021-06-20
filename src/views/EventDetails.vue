@@ -26,7 +26,9 @@ export default {
       })
       .catch((error) => {
         if (error.response && error.response.status === 404) {
-          this.$router.push({ name: 'NotFound', params: { element: 'event' } })
+          this.$router.push({ name: 'NotFound', params: { resource: 'event' } })
+        } else {
+          this.$router.push({ name: 'NetworkError' })
         }
       })
   },

@@ -1,12 +1,13 @@
 <template>
-  <h1>404 - {{ titleCase(element) }} Not Found</h1>
+  <h1>Oops!</h1>
+  <h2>404 - {{ titleCase(resource) }} Not Found</h2>
   <button @click="goHome">Home</button>
 </template>
 
 <script>
 export default {
   props: {
-    element: {
+    resource: {
       type: String,
       required: true,
     },
