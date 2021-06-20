@@ -6,18 +6,18 @@
 </template>
 
 <script>
-import EventCard from "@/components/EventCard.vue";
-import EventService from "@/services/EventService";
+import EventCard from '@/components/EventCard.vue'
+import EventService from '@/services/EventService'
 
 export default {
-  name: "EventList",
+  name: 'EventList',
   components: {
     EventCard,
   },
   data() {
     return {
       events: null,
-    };
+    }
   },
   created() {
     EventService.getEvents()
@@ -25,10 +25,10 @@ export default {
         this.events = response.data
       })
       .catch((error) => {
-        console.log(error);
-      });
+        console.log(error)
+      })
   },
-};
+}
 </script>
 
 <style scoped>
